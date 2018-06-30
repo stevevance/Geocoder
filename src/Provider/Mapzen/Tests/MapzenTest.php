@@ -99,9 +99,9 @@ class MapzenTest extends BaseTestCase
         $this->assertEquals('Gage Street', $result->getStreetName());
         $this->assertEquals('LA1 1UH', $result->getPostalCode());
         $this->assertEquals('Lancaster', $result->getLocality());
-        $this->assertCount(4, $result->getAdminLevels());
+        $this->assertNotEmpty($result->getAdminLevels());
         $this->assertEquals('Lancashire', $result->getAdminLevels()->get(1)->getName());
-        $this->assertEquals('England', $result->getAdminLevels()->get(3)->getName());
+        $this->assertEquals('England', $result->getAdminLevels()->get(4)->getName());
         $this->assertEquals('United Kingdom', $result->getCountry()->getName());
         $this->assertEquals('GBR', $result->getCountry()->getCode());
     }
